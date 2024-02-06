@@ -121,7 +121,7 @@ public  ArrayList<Object[]>buscarInstructor(int CEDULA_INS){
             int res=ejecutar.executeUpdate();
             if(res>0){
                 JOptionPane.showMessageDialog
-        (null, "Instructor actualizada con éxito");
+        (null, "Instructor actualizado con éxito");
                 System.out.println("PERSONA CREADA CON ÉXITO");
                 ejecutar.close();
             }else{
@@ -145,7 +145,7 @@ public  ArrayList<Object[]>buscarInstructor(int CEDULA_INS){
             int res=ejecutar.executeUpdate();
             if(res>0){
                 JOptionPane.showMessageDialog
-        (null, "Instructor eliminada con éxito");
+        (null, "Instructor eliminado con éxito");
                 System.out.println("PERSONA CREADA CON ÉXITO");
                 ejecutar.close();
             }else{

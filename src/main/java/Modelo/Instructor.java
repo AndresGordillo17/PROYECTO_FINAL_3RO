@@ -10,17 +10,16 @@ package Modelo;
  */
 public class Instructor {
      private String NOMBRE_INS,APELLIDOS_INS,DIRECCION_INS,GRADO;
-    private int ID_INSTRUCTOR,CEDULA_INS,TELEFONO_INS;
+    private int CEDULA_INS,TELEFONO_INS;
 
     public Instructor() {
     }
 
-    public Instructor(String NOMBRE_INS, String APELLIDOS_INS, String DIRECCION_INS, String GRADO, int ID_INSTRUCTOR, int CEDULA_INS, int TELEFONO_INS) {
+    public Instructor(String NOMBRE_INS, String APELLIDOS_INS, String DIRECCION_INS, String GRADO, int CEDULA_INS, int TELEFONO_INS) {
         this.NOMBRE_INS = NOMBRE_INS;
         this.APELLIDOS_INS = APELLIDOS_INS;
         this.DIRECCION_INS = DIRECCION_INS;
         this.GRADO = GRADO;
-        this.ID_INSTRUCTOR = ID_INSTRUCTOR;
         this.CEDULA_INS = CEDULA_INS;
         this.TELEFONO_INS = TELEFONO_INS;
     }
@@ -57,13 +56,6 @@ public class Instructor {
         this.GRADO = GRADO;
     }
 
-    public int getID_INSTRUCTOR() {
-        return ID_INSTRUCTOR;
-    }
-
-    public void setID_INSTRUCTOR(int ID_INSTRUCTOR) {
-        this.ID_INSTRUCTOR = ID_INSTRUCTOR;
-    }
 
     public int getCEDULA_INS() {
         return CEDULA_INS;
@@ -89,7 +81,7 @@ public class Instructor {
                 ", apellido_ins='" + APELLIDOS_INS + '\'' +
                 ", direccion_ins='" + DIRECCION_INS + '\'' +
                 ", grado_ins='" + GRADO + '\'' +
-                ", id_Instructor=" + ID_INSTRUCTOR +
+               
                 ", cedula_ins=" + CEDULA_INS +
                 ", telefono_ins=" + TELEFONO_INS +
                 '}';

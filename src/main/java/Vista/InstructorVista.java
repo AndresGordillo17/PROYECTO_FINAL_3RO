@@ -33,7 +33,6 @@ public class InstructorVista extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtTELEF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtAPELLI = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -52,6 +51,7 @@ public class InstructorVista extends javax.swing.JInternalFrame {
         btnactualizar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
         btnbuscar = new javax.swing.JButton();
+        txtTELEF = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -74,8 +74,6 @@ public class InstructorVista extends javax.swing.JInternalFrame {
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
             }
         });
-
-        txtTELEF.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel7.setText("TELEFONO :");
@@ -176,36 +174,40 @@ public class InstructorVista extends javax.swing.JInternalFrame {
                 .addGap(147, 147, 147)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNOM, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtAPELLI, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtGRADO, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtTELEF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtCEDULA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtDIRECCIO, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(150, 150, 150)
+                            .addComponent(txtNOM, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAPELLI, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtGRADO, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtTELEF))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtCEDULA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtDIRECCIO, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btneliminar)
                             .addComponent(btnagregar))
@@ -213,58 +215,53 @@ public class InstructorVista extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnbuscar)
                             .addComponent(btnactualizar))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 304, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtCEDULA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(txtTELEF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(txtDIRECCIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(txtGRADO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jLabel1)
                         .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtNOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtAPELLI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnbuscar)
-                            .addComponent(btnagregar))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnbuscar)
+                                    .addComponent(btnagregar))
                                 .addGap(59, 59, 59)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btneliminar)
-                                    .addComponent(btnactualizar)))
+                                    .addComponent(btnactualizar))
+                                .addGap(96, 96, 96)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(115, 115, 115)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtCEDULA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(20, 20, 20)
+                                    .addComponent(jLabel3)
+                                    .addComponent(txtNOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(txtTELEF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(txtDIRECCIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(txtGRADO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120))
+                                    .addComponent(jLabel2)
+                                    .addComponent(txtAPELLI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         pack();
@@ -285,80 +282,24 @@ public class InstructorVista extends javax.swing.JInternalFrame {
 
     public void setDatos() {
         Object[] datosFila = new Object[modelo.getColumnCount()];
-        int nro = 1;
+//        int nro = 1;
         for (Instructor datos : listaPersonaModel) {
-            datosFila[0] = nro;
+//            datosFila[0] = nro;
             datosFila[1] = datos.getNOMBRE_INS();
             datosFila[2] = datos.getAPELLIDOS_INS();
             datosFila[3] = datos.getCEDULA_INS();
             datosFila[4] = datos.getDIRECCION_INS();
             datosFila[5] = datos.getTELEFONO_INS();
             datosFila[6] = datos.getGRADO();
-            nro++;
+//            nro++;
             modelo.addRow(datosFila);
         }
 
     }
-    private void txtAPELLIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPELLIActionPerformed
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAPELLIActionPerformed
-
-    private void txtGRADOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGRADOActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtGRADOActionPerformed
-
-    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
-        // TODO add your handling code here:
-      Instructor pM = new Instructor(
-    txtNOM.getText(),
-    txtAPELLI.getText(),
-    txtDIRECCIO.getText(),
-    txtGRADO.getText(),
-    0,
-    Integer.parseInt(txtCEDULA.getText()),
-    Integer.parseInt(txtTELEF.getText())
-);
-
-        Controladorinstructor pC = new Controladorinstructor();
-        pC.crearInstructor(pM);
-        
-        listaPersonaModel.add(pM);
-        setDatos();
-        limpiarTabla();
-        cargarTabla();
-        
-    }//GEN-LAST:event_btnagregarActionPerformed
-
-    private void txtDIRECCIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDIRECCIOActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDIRECCIOActionPerformed
-
-    private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
-        // TODO add your handling code here:
-         Instructor pM = new Instructor(
-    txtNOM.getText(),
-    txtAPELLI.getText(),
-    txtDIRECCIO.getText(),
-    txtGRADO.getText(),
-    0,
-    Integer.parseInt(txtCEDULA.getText()),
-    Integer.parseInt(txtTELEF.getText())
-);
- Controladorinstructor pC=new Controladorinstructor();
-        pC.actualizarInstructor(pM);
-        limpiarTabla();
-        cargarTabla();
-        
-    }//GEN-LAST:event_btnactualizarActionPerformed
-
-    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-       int cedula=Integer.parseInt(txtCEDULA.getText());
-        Controladorinstructor pC=new Controladorinstructor();
-        pC.eliminarInstructor(cedula);
-        limpiarTabla();
-        cargarTabla();
-        limpiarEntradas();
-    }//GEN-LAST:event_btneliminarActionPerformed
+          cargarTabla();
+    }//GEN-LAST:event_formInternalFrameActivated
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         // TODO add your handling code here:
@@ -370,13 +311,66 @@ public class InstructorVista extends javax.swing.JInternalFrame {
         }
         pC.buscarInstructor(cedula);
         limpiarTabla();
-        cargartabla();
+        cargarTabla();
     }//GEN-LAST:event_btnbuscarActionPerformed
 
-    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        int cedula=Integer.parseInt(txtCEDULA.getText());
+        Controladorinstructor pC=new Controladorinstructor();
+        pC.eliminarInstructor(cedula);
+        limpiarTabla();
+        cargarTabla();
+        limpiarEntradas();
+    }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
         // TODO add your handling code here:
-          cargarTabla();
-    }//GEN-LAST:event_formInternalFrameActivated
+        Instructor pM = new Instructor(
+            txtNOM.getText(),
+            txtAPELLI.getText(),
+            txtDIRECCIO.getText(),
+            txtGRADO.getText(),
+            Integer.parseInt(txtCEDULA.getText()),
+            Integer.parseInt(txtTELEF.getText())
+        );
+        Controladorinstructor pC=new Controladorinstructor();
+        pC.actualizarInstructor(pM);
+        limpiarTabla();
+        cargarTabla();
+
+    }//GEN-LAST:event_btnactualizarActionPerformed
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        // TODO add your handling code here:
+        Instructor pM = new Instructor(
+            txtNOM.getText(),
+            txtAPELLI.getText(),
+            txtDIRECCIO.getText(),
+            txtGRADO.getText(),
+            Integer.parseInt(txtCEDULA.getText()),
+            Integer.parseInt(txtTELEF.getText())
+        );
+
+        Controladorinstructor pC = new Controladorinstructor();
+        pC.crearInstructor(pM);
+
+        listaPersonaModel.add(pM);
+        setDatos();
+        cargarTabla();
+
+    }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void txtGRADOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGRADOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGRADOActionPerformed
+
+    private void txtAPELLIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPELLIActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAPELLIActionPerformed
+
+    private void txtDIRECCIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDIRECCIOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDIRECCIOActionPerformed
 private void limpiarTabla() {
         int a = modelo.getRowCount() - 1;  //Índices van de 0 a n-1
         //System.out.println("Tabla "+a);   //Para mostrar por consola el resultado
@@ -429,7 +423,4 @@ private void limpiarTabla() {
     private javax.swing.JTextField txtTELEF;
     // End of variables declaration//GEN-END:variables
 
-    private void cargartabla() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
