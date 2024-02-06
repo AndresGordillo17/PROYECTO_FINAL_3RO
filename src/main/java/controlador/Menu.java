@@ -5,8 +5,8 @@
 package controlador;
 
 import Vista.Fichaevalua;
-import Vista.Instructor;
-import Vista.Practicante;
+import Vista.InstructorVista;
+import Vista.PracticanteVista;
 
 /**
  *
@@ -134,7 +134,6 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        
          Fichaevalua N9=new Fichaevalua();
         escritorio.add(N9);
         N9.show();
@@ -142,17 +141,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        Practicante N8=new Practicante();
-        escritorio.add(N8);
-        N8.show();
-       
+       InstructorVista N7=new InstructorVista();
+        escritorio.add(N7);
+        N7.show();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
-        Instructor N7=new Instructor();
-        escritorio.add(N7);
-        N7.show();
+        PracticanteVista N8=new PracticanteVista();
+        escritorio.add(N8);
+        N8.show();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     public void ejecutarReporte(){

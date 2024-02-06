@@ -9,79 +9,90 @@ package Modelo;
  * @author usuario
  */
 public class Instructor {
-     private String Nombre_ins,apellido_ins,direccion_ins,grado_ins;
-    private int id_Instructor,cedula_ins,telefono_ins;
+     private String NOMBRE_INS,APELLIDOS_INS,DIRECCION_INS,GRADO;
+    private int ID_INSTRUCTOR,CEDULA_INS,TELEFONO_INS;
 
     public Instructor() {
     }
 
-    public Instructor(String Nombre_ins, String apellido_ins, String direccion_ins, String grado_ins, int id_Instructor, int cedula_ins, int telefono_ins) {
-        this.Nombre_ins = Nombre_ins;
-        this.apellido_ins = apellido_ins;
-        this.direccion_ins = direccion_ins;
-        this.grado_ins = grado_ins;
-        this.id_Instructor = id_Instructor;
-        this.cedula_ins = cedula_ins;
-        this.telefono_ins = telefono_ins;
+    public Instructor(String NOMBRE_INS, String APELLIDOS_INS, String DIRECCION_INS, String GRADO, int ID_INSTRUCTOR, int CEDULA_INS, int TELEFONO_INS) {
+        this.NOMBRE_INS = NOMBRE_INS;
+        this.APELLIDOS_INS = APELLIDOS_INS;
+        this.DIRECCION_INS = DIRECCION_INS;
+        this.GRADO = GRADO;
+        this.ID_INSTRUCTOR = ID_INSTRUCTOR;
+        this.CEDULA_INS = CEDULA_INS;
+        this.TELEFONO_INS = TELEFONO_INS;
     }
 
-    public String getNombre_ins() {
-        return Nombre_ins;
+    public String getNOMBRE_INS() {
+        return NOMBRE_INS;
     }
 
-    public void setNombre_ins(String Nombre_ins) {
-        this.Nombre_ins = Nombre_ins;
+    public void setNOMBRE_INS(String NOMBRE_INS) {
+        this.NOMBRE_INS = NOMBRE_INS;
     }
 
-    public String getApellido_ins() {
-        return apellido_ins;
+    public String getAPELLIDOS_INS() {
+        return APELLIDOS_INS;
     }
 
-    public void setApellido_ins(String apellido_ins) {
-        this.apellido_ins = apellido_ins;
+    public void setAPELLIDOS_INS(String APELLIDOS_INS) {
+        this.APELLIDOS_INS = APELLIDOS_INS;
     }
 
-    public String getDireccion_ins() {
-        return direccion_ins;
+    public String getDIRECCION_INS() {
+        return DIRECCION_INS;
     }
 
-    public void setDireccion_ins(String direccion_ins) {
-        this.direccion_ins = direccion_ins;
+    public void setDIRECCION_INS(String DIRECCION_INS) {
+        this.DIRECCION_INS = DIRECCION_INS;
     }
 
-    public String getGrado_ins() {
-        return grado_ins;
+    public String getGRADO() {
+        return GRADO;
     }
 
-    public void setGrado_ins(String grado_ins) {
-        this.grado_ins = grado_ins;
+    public void setGRADO(String GRADO) {
+        this.GRADO = GRADO;
     }
 
-    public int getId_Instructor() {
-        return id_Instructor;
+    public int getID_INSTRUCTOR() {
+        return ID_INSTRUCTOR;
     }
 
-    public void setId_Instructor(int id_Instructor) {
-        this.id_Instructor = id_Instructor;
+    public void setID_INSTRUCTOR(int ID_INSTRUCTOR) {
+        this.ID_INSTRUCTOR = ID_INSTRUCTOR;
     }
 
-    public int getCedula_ins() {
-        return cedula_ins;
+    public int getCEDULA_INS() {
+        return CEDULA_INS;
     }
 
-    public void setCedula_ins(int cedula_ins) {
-        this.cedula_ins = cedula_ins;
+    public void setCEDULA_INS(int CEDULA_INS) {
+        this.CEDULA_INS = CEDULA_INS;
     }
 
-    public int getTelefono_ins() {
-        return telefono_ins;
+    public int getTELEFONO_INS() {
+        return TELEFONO_INS;
     }
 
-    public void setTelefono_ins(int telefono_ins) {
-        this.telefono_ins = telefono_ins;
+    public void setTELEFONO_INS(int TELEFONO_INS) {
+        this.TELEFONO_INS = TELEFONO_INS;
     }
+
+    
 @Override
     public String toString() {
-        return "DATOS DE PERSONA";}
+        return "Instructor{" +
+                "Nombre_ins='" + NOMBRE_INS + '\'' +
+                ", apellido_ins='" + APELLIDOS_INS + '\'' +
+                ", direccion_ins='" + DIRECCION_INS + '\'' +
+                ", grado_ins='" + GRADO + '\'' +
+                ", id_Instructor=" + ID_INSTRUCTOR +
+                ", cedula_ins=" + CEDULA_INS +
+                ", telefono_ins=" + TELEFONO_INS +
+                '}';
+    }
     
 }
