@@ -7,11 +7,7 @@ package Vista;
 import Modelo.SesionModel;
 import controlador.Menu;
 import controlador.Controlarsesion;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
@@ -24,16 +20,7 @@ public class Sesion extends javax.swing.JFrame {
      */
     public Sesion() {
         initComponents();
-//        setLocationRelativeTo(null);
-//        setResizable(false);
-//        setTitle("INICIO DE SESIÓN KARATE ");
-//        ///CODIGO PARA IMAGEN DE FONDO////
-//        ((JPanel) getContentPane()).setOpaque(false);
-//        ImageIcon uno = new ImageIcon(this.getClass().getResource("/imagenes/fondo.jpg"));
-//        JLabel fondo = new JLabel();
-//        fondo.setIcon(uno);
-//        getLayeredPane().add(fondo, JLayeredPane.FRAME_CONTENT_LAYER);
-//        fondo.setBounds(0, 0, uno.getIconWidth(), uno.getIconHeight());
+       
     }
 
     /**
@@ -193,4 +180,5 @@ public class Sesion extends javax.swing.JFrame {
     private javax.swing.JPasswordField pswClave;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
 }

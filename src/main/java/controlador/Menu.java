@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import Vista.Catalogocinturones;
 import Vista.Fichaevalua;
 import Vista.InstructorVista;
 import Vista.PracticanteVista;
@@ -41,6 +42,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        ver = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,6 +104,15 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Cinturones ");
+
+        ver.setText("ver");
+        ver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verActionPerformed(evt);
+            }
+        });
+        jMenu3.add(ver);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Historial");
@@ -153,6 +164,13 @@ public class Menu extends javax.swing.JFrame {
         escritorio.add(N8);
         N8.show();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
+        // TODO add your handling code here:
+        Catalogocinturones C1=new Catalogocinturones();
+        escritorio.add(C1);
+        C1.show();
+    }//GEN-LAST:event_verActionPerformed
 
     public void ejecutarReporte(){
         Fichaevalua reporte=new Fichaevalua();
@@ -221,5 +239,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenu menuArboles;
     private javax.swing.JMenu menuPilas;
+    private javax.swing.JMenuItem ver;
     // End of variables declaration//GEN-END:variables
 }

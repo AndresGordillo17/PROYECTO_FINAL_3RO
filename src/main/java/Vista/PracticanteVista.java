@@ -250,6 +250,62 @@ public class PracticanteVista extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        // TODO add your handling code here:
+        Practicante PRA = new Practicante(txtNOMBRE.getText(), txtAPELLIDO.getText(),
+            txtDIRECCION.getText(), 0,
+            0, Integer.parseInt(txtEDAD.getText()), Integer.parseInt(txtcedula.getText()),
+            Integer.parseInt(txtTELEFONO.getText()));
+        Controladorpracticante CP = new Controladorpracticante();
+        CP.crearPractcante(PRA);
+        listaPracticante.add(PRA);
+        setDatos();
+        TBPracti.setModel(modeloP);
+
+    }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void txtDIRECCIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDIRECCIONActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDIRECCIONActionPerformed
+
+    private void txtAPELLIDOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPELLIDOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAPELLIDOActionPerformed
+
+    private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
+        // TODO add your handling code here:
+        Practicante PRA = new Practicante(txtNOMBRE.getText(), txtAPELLIDO.getText(),
+            txtDIRECCION.getText(), 0,
+            0, Integer.parseInt(txtEDAD.getText()), Integer.parseInt(txtcedula.getText()),
+            Integer.parseInt(txtTELEFONO.getText()));
+        Controladorpracticante CP=new Controladorpracticante();
+        CP.actualizarPracticante(PRA);
+        limpiarTablaP();
+        cargarTablaP();
+    }//GEN-LAST:event_btnactualizarActionPerformed
+
+    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
+        // TODO add your handling code here:
+        int cedula=Integer.parseInt(txtcedula.getText());
+        Controladorpracticante CP=new Controladorpracticante();
+        ArrayList<Object[]> listas=CP.buscarPracticante(cedula);
+        for(Object[] filas:listas){
+            modeloP.addRow(filas);
+        }
+        CP.buscarPracticante(cedula);
+        limpiarTablaP();
+        cargarTablaP();
+    }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        int cedula=Integer.parseInt(txtcedula.getText());
+        Controladorpracticante CP=new Controladorpracticante();
+        CP.eliminarPracticante(cedula);
+        limpiarTablaP();
+        cargarTablaP();
+        limpiarEntradas();
+    }//GEN-LAST:event_btneliminarActionPerformed
  ArrayList<Practicante> listaPracticante = new ArrayList<>();
     DefaultTableModel modeloP = new DefaultTableModel();
 
@@ -280,64 +336,7 @@ public class PracticanteVista extends javax.swing.JInternalFrame {
             modeloP.addRow(datosPracticante);
         }
 
-    }
-    private void txtAPELLIDOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAPELLIDOActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAPELLIDOActionPerformed
-
-    private void txtDIRECCIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDIRECCIONActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDIRECCIONActionPerformed
-
-    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
-        // TODO add your handling code here:
-       Practicante PRA = new Practicante(txtNOMBRE.getText(), txtAPELLIDO.getText(),
-               txtDIRECCION.getText(), 0,
-               0, Integer.parseInt(txtEDAD.getText()), Integer.parseInt(txtcedula.getText()),
-               Integer.parseInt(txtTELEFONO.getText()));
-        Controladorpracticante CP = new Controladorpracticante();
-        CP.crearPractcante(PRA);
-        listaPracticante.add(PRA);
-        setDatos();
-        TBPracti.setModel(modeloP);
-       
-    }//GEN-LAST:event_btnagregarActionPerformed
-
-    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        int cedula=Integer.parseInt(txtcedula.getText());
-        Controladorpracticante CP=new Controladorpracticante();
-        CP.eliminarPracticante(cedula);
-        limpiarTablaP();
-        cargarTablaP();
-        limpiarEntradas();
-    }//GEN-LAST:event_btneliminarActionPerformed
-
-    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-        // TODO add your handling code here:
-        int cedula=Integer.parseInt(txtcedula.getText());
-        Controladorpracticante CP=new Controladorpracticante();
-        ArrayList<Object[]> listas=CP.buscarPracticante(cedula);
-        for(Object[] filas:listas){
-            modeloP.addRow(filas);
-        }
-        CP.buscarPracticante(cedula);
-        limpiarTablaP();
-        cargarTablaP();
-    }//GEN-LAST:event_btnbuscarActionPerformed
-
-    private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
-        // TODO add your handling code here:
-        Practicante PRA = new Practicante(txtNOMBRE.getText(), txtAPELLIDO.getText(),
-               txtDIRECCION.getText(), 0,
-               0, Integer.parseInt(txtEDAD.getText()), Integer.parseInt(txtcedula.getText()),
-               Integer.parseInt(txtTELEFONO.getText()));
-        Controladorpracticante CP=new Controladorpracticante();
-        CP.actualizarPracticante(PRA);
-        limpiarTablaP();
-        cargarTablaP();
-
-    }//GEN-LAST:event_btnactualizarActionPerformed
-private void limpiarTablaP() {
+    }private void limpiarTablaP() {
         int a = modeloP.getRowCount() - 1;  //Índices van de 0 a n-1
         //System.out.println("Tabla "+a);   //Para mostrar por consola el resultado
         for (int i = a; i >= 0; i--) {
