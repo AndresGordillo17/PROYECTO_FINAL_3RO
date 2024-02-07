@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controlador;
-
+import controlador.Menu;
 import Modelo.Instructor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +22,7 @@ public class Controladorinstructor {
     Connection conectado=(Connection)conectar.conectar();
     PreparedStatement ejecutar;
     ResultSet resultado;
-
+int res;//para escribir
     public Controladorinstructor() {
     }
 
@@ -46,7 +46,7 @@ public class Controladorinstructor {
             ejecutar=(PreparedStatement)conectado.prepareCall(SQL);
             int res= ejecutar.executeUpdate();
             if(res>0){
-                JOptionPane.showMessageDialog(null, "PERSONA CREADA CON EXITO!!!!");
+                JOptionPane.showMessageDialog(null, "INSTRUCTOR CREADO CON EXITO!!!!");
             }else{
                JOptionPane.showMessageDialog(null,"REVISE LA INFO!!!!");
             }
@@ -58,29 +58,31 @@ public class Controladorinstructor {
     }
 
    public ArrayList<Object[]> datosPersonas() {
-    ArrayList<Object[]> listaTotalRegistros = new ArrayList<>();
-    try {
-        String SQL = "call ListarInstructores()";
-        try (PreparedStatement stmt = conectado.prepareCall(SQL);
-             ResultSet res = stmt.executeQuery()) {
+        ArrayList<Object[]> listaTotalRegistros = new ArrayList<>();
+        try {
+            String SQL = "call ListarInstructores()";
+            ejecutar = (PreparedStatement) conectado.prepareCall(SQL);
+            //excuteQuery cuando consulto la bdd
+            //Recibo un result set cuando consulto
+            ResultSet res = ejecutar.executeQuery();
             int cont = 1;
             while (res.next()) {
                 Object[] fila = new Object[7];
-                for (int i = 1; i <= 6; i++) {
-                    fila[i] = res.getObject(i);
+                for (int i = 0; i < 7; i++) {
+                    fila[i] = res.getObject(i + 1);
                 }
                 fila[0] = cont;
                 listaTotalRegistros.add(fila);
                 cont++;
             }
+            ejecutar.close();
+
+            return listaTotalRegistros;
+        } catch (SQLException e) {
+            System.out.println("BDD" + e);
         }
-        return listaTotalRegistros;
-    } catch (SQLException e) {
-        System.out.println("BDD" + e);
-        e.printStackTrace();
+        return null;
     }
-    return null;
-}
 
 public  ArrayList<Object[]>buscarInstructor(int CEDULA_INS){
         ArrayList<Object[]> listaTotalRegistros=new ArrayList<>();
@@ -90,8 +92,8 @@ public  ArrayList<Object[]>buscarInstructor(int CEDULA_INS){
             ResultSet resultado=ejecutar.executeQuery();
             int cont=1;
             while(resultado.next()){
-                Object[]fila=new Object[6];
-                for (int i = 0; i < 6; i++) {
+                Object[]fila=new Object[7];
+                for (int i = 0; i < 7; i++) {
                     fila[i]=resultado.getObject(i+1);
                }
                 fila[0]=cont;

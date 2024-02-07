@@ -254,7 +254,7 @@ public class PracticanteVista extends javax.swing.JInternalFrame {
     DefaultTableModel modeloP = new DefaultTableModel();
 
     public void setModel() {
-        String[] cabecera = {"Nro.","ID_Instructor", "Nombres",
+        String[] cabecera = {"Nro.", "Nombres",
             "Apellidos",
             "Edad",
             "Cédula",
@@ -270,13 +270,12 @@ public class PracticanteVista extends javax.swing.JInternalFrame {
         int nro = 1;
         for (Practicante datosP : listaPracticante) {
             datosPracticante[0] = nro;
-            datosPracticante[1] = datosP.getID_INSTRUCTOR();
-            datosPracticante[2] = datosP.getNOMBRE();
-            datosPracticante[3] = datosP.getAPELLIDO();
-            datosPracticante[4] = datosP.getEDAD();
-            datosPracticante[5] = datosP.getCEDULA();
-            datosPracticante[6] = datosP.getDIRECCION();
-            datosPracticante[7] = datosP.getTELEFONO();
+            datosPracticante[1] = datosP.getNOMBRE();
+            datosPracticante[2] = datosP.getAPELLIDO();
+            datosPracticante[3] = datosP.getEDAD();
+            datosPracticante[4] = datosP.getCEDULA();
+            datosPracticante[5] = datosP.getDIRECCION();
+            datosPracticante[6] = datosP.getTELEFONO();
             nro++;
             modeloP.addRow(datosPracticante);
         }

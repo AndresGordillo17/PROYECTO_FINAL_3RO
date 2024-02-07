@@ -74,6 +74,11 @@ public class InstructorVista extends javax.swing.JInternalFrame {
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
             }
         });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel7.setText("TELEFONO :");
@@ -140,6 +145,11 @@ public class InstructorVista extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TBins.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TBinsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TBins);
 
         btnactualizar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
@@ -261,7 +271,7 @@ public class InstructorVista extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel2)
                                     .addComponent(txtAPELLI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,23 +292,23 @@ public class InstructorVista extends javax.swing.JInternalFrame {
 
     public void setDatos() {
         Object[] datosFila = new Object[modelo.getColumnCount()];
-//        int nro = 1;
+        int nro = 1;
         for (Instructor datos : listaPersonaModel) {
-//            datosFila[0] = nro;
+            datosFila[0] = nro;
             datosFila[1] = datos.getNOMBRE_INS();
             datosFila[2] = datos.getAPELLIDOS_INS();
             datosFila[3] = datos.getCEDULA_INS();
             datosFila[4] = datos.getDIRECCION_INS();
             datosFila[5] = datos.getTELEFONO_INS();
             datosFila[6] = datos.getGRADO();
-//            nro++;
+            nro++;
             modelo.addRow(datosFila);
         }
 
     }
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         // TODO add your handling code here:
-          cargarTabla();
+        cargarTabla();
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -306,12 +316,11 @@ public class InstructorVista extends javax.swing.JInternalFrame {
         int cedula=Integer.parseInt(txtCEDULA.getText());
         Controladorinstructor pC=new Controladorinstructor();
         ArrayList<Object[]> listas=pC.buscarInstructor(cedula);
+        limpiarTabla();
         for(Object[] filas:listas){
             modelo.addRow(filas);
         }
-        pC.buscarInstructor(cedula);
-        limpiarTabla();
-        cargarTabla();
+        TBins.setModel(modelo);
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
@@ -329,7 +338,7 @@ public class InstructorVista extends javax.swing.JInternalFrame {
             txtNOM.getText(),
             txtAPELLI.getText(),
             txtDIRECCIO.getText(),
-            txtGRADO.getText(),
+            txtGRADO.getText(),0,
             Integer.parseInt(txtCEDULA.getText()),
             Integer.parseInt(txtTELEF.getText())
         );
@@ -346,18 +355,18 @@ public class InstructorVista extends javax.swing.JInternalFrame {
             txtNOM.getText(),
             txtAPELLI.getText(),
             txtDIRECCIO.getText(),
-            txtGRADO.getText(),
+            txtGRADO.getText(),0,
             Integer.parseInt(txtCEDULA.getText()),
             Integer.parseInt(txtTELEF.getText())
         );
 
         Controladorinstructor pC = new Controladorinstructor();
         pC.crearInstructor(pM);
-
-        listaPersonaModel.add(pM);
+          listaPersonaModel.add(pM);
         setDatos();
+         limpiarTabla();
         cargarTabla();
-
+        
     }//GEN-LAST:event_btnagregarActionPerformed
 
     private void txtGRADOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGRADOActionPerformed
@@ -371,6 +380,24 @@ public class InstructorVista extends javax.swing.JInternalFrame {
     private void txtDIRECCIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDIRECCIOActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDIRECCIOActionPerformed
+
+    private void TBinsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TBinsMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel dtm=(DefaultTableModel) TBins.getModel();
+        txtNOM.setText((String) dtm.getValueAt(TBins.getSelectedRow(),1));
+        txtAPELLI.setText((String) dtm.getValueAt(TBins.getSelectedRow(),2));
+        txtCEDULA.setText( dtm.getValueAt(TBins.getSelectedRow(),3).toString());
+        txtDIRECCIO.setText((String) dtm.getValueAt(TBins.getSelectedRow(),4));
+        txtTELEF.setText( dtm.getValueAt(TBins.getSelectedRow(),5).toString());
+        txtGRADO.setText((String) dtm.getValueAt(TBins.getSelectedRow(),6));
+
+        
+    }//GEN-LAST:event_TBinsMouseClicked
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // TODO add your handling code here:
+        cargarTabla();
+    }//GEN-LAST:event_formMouseClicked
 private void limpiarTabla() {
         int a = modelo.getRowCount() - 1;  //Índices van de 0 a n-1
         //System.out.println("Tabla "+a);   //Para mostrar por consola el resultado
