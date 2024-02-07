@@ -32,23 +32,15 @@ public class Controladorinstructor {
         this.persona = persona;
     }
  
-    public void crearInstructor(Instructor p){
+    public void crearInstructor(Modelo.Instructor p){
         try {
-            String SQL="call CrearInstructor('"+p.getNOM()+"',"
-                    + "'"+p.getapellido_ins+"',"
-                    + "'"+p.getcedula_ins()+"','"+p.getdireccion_ins()+"',"
-                    + "'"+p.gettelefono_ins()+"'"+p.getgrado_ins())";
-            ejecutar=(PreparedStatement)conectado.prepareCall(SQL);
-            int res= ejecutar.executeUpdate();
-            if(res>0){
-                JOptionPane.showMessageDialog(null, "PERSONA CREADA CON EXITO!!!!");
-            }else{
-               JOptionPane.showMessageDialog(null,"REVISE LA INFO!!!!");
-            }
-            ejecutar.close();
+            String SQL = "CALL CrearInstructor('" + p.getNombre_ins() + "','" +
+                    p.getApellido_ins()+"', '"+p.getCedula_ins()+"','"+p.getDireccion_ins()+"','"+
+                    p.getTelefono_ins()+"','"+p.getGrado_ins()+")";
+            
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"CONTACTESE CON EL ADMINISTRADOR !!");
         }
-    
     }
+    
+    
 }

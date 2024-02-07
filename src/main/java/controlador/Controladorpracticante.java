@@ -5,6 +5,12 @@
 package controlador;
 
 import Modelo.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,79 +18,61 @@ import Modelo.*;
  */
 public class Controladorpracticante {
      
-    private String Nombre,apellido,direccion;
-    private int edad,telefono,cedula;
+    private Practicante persona;
+    CONEXIONBDD parametros = new CONEXIONBDD();
+    Connection conectar = (Connection)parametros.conectar();
+    PreparedStatement ejecutar;
+    ResultSet res;
 
-    public Controladorpracticante() {
+    public Practicante getPersona() {
+        return persona;
     }
 
-    public Controladorpracticante(String Nombre, String apellido, String direccion, int edad, int telefono, int cedula) {
-        this.Nombre = Nombre;
-        this.apellido = apellido;
-        this.direccion = direccion;
-        this.edad = edad;
-        this.telefono = telefono;
-        this.cedula = cedula;
+    public void setPersona(Practicante persona) {
+        this.persona = persona;
     }
 
-    public String getNombre() {
-        return Nombre;
-    }
+public void crearPracticante(Practicante p) {
+        try {
+            String sql = "call crearPracticante('" + p.getNOMBRE() + "','" + p.getAPELLIDO() + "','" + p.getCEDULA() + "','" + p.getDIRECCION() + "','" + p.getEDAD() + "');";
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+            var resultado = ejecutar.executeUpdate();
+            if (resultado > 0) {
+                JOptionPane.showMessageDialog(null, "Persona Creada con Éxito");
+                System.out.println("PERSONA CREADA CON ÉXITO");
+                ejecutar.close();
+            } else {
+                JOptionPane.showMessageDialog(null, "Revise los Datos ingresados");
+                System.out.println("REVISE LOS DATOS INGRESADOS");
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR SQL");
+        }
+    } 
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-    public int getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
-    }
-
-   
-    @Override
-    public String toString() {
-        return "Controladorpracticante{" +
-                "Nombre='" + Nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", cedula='" + cedula + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", edad=" + edad +
-                ", telefono=" + telefono +
-                '}';
-    }
+//public ArrayList<Object[]> datosPracticante() {
+//    ArrayList<Object[]> listaTotalP = new ArrayList<>();
+//    try {
+//        String SQL = "call ListarPracticantes()";
+//        try (PreparedStatement stmt = 
+//             ResultSet res = stmt.executeQuery()) {
+//            int cont = 1;
+//            while (res.next()) {
+//                Object[] fila = new Object[7];
+//                for (int i = 1; i <= 6; i++) {
+//                    fila[i] = res.getObject(i);
+//                }
+//                fila[0] = cont;
+//                listaTotalP.add(fila);
+//                cont++;
+//            }
+//        }
+//        return listaTotalP;
+//    } catch (SQLException e) {
+//        System.out.println("BDD" + e);
+//        e.printStackTrace();
+//    }
+//    return null;
+//}
+//    
 }
