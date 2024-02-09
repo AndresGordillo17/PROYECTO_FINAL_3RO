@@ -122,17 +122,14 @@ public  ArrayList<Object[]>buscarInstructor(int CEDULA_INS){
             //int res cuando escribo
             int res=ejecutar.executeUpdate();
             if(res>0){
-                JOptionPane.showMessageDialog
-        (null, "Instructor actualizado con éxito");
-                System.out.println("PERSONA CREADA CON ÉXITO");
+                JOptionPane.showMessageDialog(null, "Instructor actualizado con éxito");
                 ejecutar.close();
             }else{
-                JOptionPane.showMessageDialog
-        (null, "Revisar los datos ingresados al momento de querer actualizar");
-                System.out.println("REVISAR LA INFORMACIÓN INGRESADA");
+                JOptionPane.showMessageDialog(null, "Revisar los datos ingresados al momento de querer actualizar");
+                JOptionPane.showMessageDialog(null, "REVISAR LA INFORMACIÓN INGRESADA");
             }
             } catch (SQLException e) {
-                System.out.println("COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
+                JOptionPane.showMessageDialog(null, "COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
         }
     
     }
