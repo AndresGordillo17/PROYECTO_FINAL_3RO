@@ -1,5 +1,6 @@
 Vista\Iniciosesion.class
 Vista\PracticanteVista$7.class
+Vista\Fichaevalua$6.class
 Modelo\Ficha.class
 Vista\InstructorVista$3.class
 controlador\Conexion.class
@@ -12,6 +13,7 @@ controlador\Menu$6.class
 controlador\Menu.class
 Vista\Catalogocinturones$1.class
 Vista\Fichaevalua$5.class
+controlador\ControladorFicha.class
 controlador\Menu$3.class
 controlador\Controlarsesion.class
 Vista\InstructorVista.class
@@ -49,5 +51,6 @@ Vista\Catalogocinturones$2.class
 controlador\Menu$4.class
 controlador\Controladorinstructor.class
 Modelo\Instructor.class
+Vista\Fichaevalua$7.class
 controlador\Menu$1.class
 controlador\Controladorcinturones.class

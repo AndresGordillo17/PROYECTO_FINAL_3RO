@@ -4,27 +4,32 @@
  */
 package Modelo;
 
+import java.sql.Date;
+
 /**
  *
  * @author usuario
  */
 public class Ficha {
-    private String Practicante,instructor,cinturon, resultado, observaciones;
-    private int tecnica,conomimiento,puntuacion,cedula;
+    private String Practicante, instructor, cinturon;
+    private int tecnica, conocimiento, puntuacion,id_evaluacion,cedula;
+    private String fecha, resultado, observaciones;
 
     public Ficha() {
     }
 
-    public Ficha(String Practicante, String instructor, String cinturon, String resultado, String observaciones, int tecnica, int conomimiento, int puntuacion, int cedula) {
+    public Ficha(String Practicante, String instructor, String cinturon, int id_evaluacion,int cedula, int tecnica, int conocimiento, int puntuacion, String resultado, String observaciones,String fecha) {
         this.Practicante = Practicante;
         this.instructor = instructor;
         this.cinturon = cinturon;
+        this.id_evaluacion = id_evaluacion;
+        this.cedula=cedula;
+        this.tecnica = tecnica;
+        this.conocimiento = conocimiento;
+        this.puntuacion = puntuacion;
+        this.fecha = fecha;
         this.resultado = resultado;
         this.observaciones = observaciones;
-        this.tecnica = tecnica;
-        this.conomimiento = conomimiento;
-        this.puntuacion = puntuacion;
-        this.cedula = cedula;
     }
 
     
@@ -77,12 +82,12 @@ public class Ficha {
         this.tecnica = tecnica;
     }
 
-    public int getConomimiento() {
-        return conomimiento;
+    public int getConocimiento() {
+        return conocimiento;
     }
 
-    public void setConomimiento(int conomimiento) {
-        this.conomimiento = conomimiento;
+    public void setConocimiento(int conocimiento) {
+        this.conocimiento = conocimiento;
     }
 
     public int getPuntuacion() {
@@ -93,6 +98,14 @@ public class Ficha {
         this.puntuacion = puntuacion;
     }
 
+    public int getId_evaluacion() {
+        return id_evaluacion;
+    }
+
+    public void setId_evaluacion(int id_evaluacion) {
+        this.id_evaluacion = id_evaluacion;
+    }
+
     public int getCedula() {
         return cedula;
     }
@@ -100,19 +113,30 @@ public class Ficha {
     public void setCedula(int cedula) {
         this.cedula = cedula;
     }
-     
-    @Override
-public String toString() {
-    return "Ficha{" + 
-           "Practicante='" + Practicante + '\'' + 
-           ", instructor='" + instructor + '\'' + 
-           ", cinturon='" + cinturon + '\'' + 
-           ", resultado='" + resultado + '\'' + 
-           ", observaciones='" + observaciones + '\'' + 
-           ", tecnica=" + tecnica + 
-           ", conomimiento=" + conomimiento + 
-           ", puntuacion=" + puntuacion + 
-           '}';
-}
 
+   
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    @Override
+    public String toString() {
+        return "Ficha{" +
+                "Idevaluacion =" + id_evaluacion + '\'' +
+                "Practicante='" + Practicante + '\'' +
+                ", cedula=" + cedula +
+                ", instructor='" + instructor + '\'' +
+                ", cinturon='" + cinturon + '\'' +
+                ", resultado='" + resultado + '\'' +
+                ", observaciones='" + observaciones + '\'' +
+                ", tecnica=" + tecnica +
+                ", conocimiento=" + conocimiento +
+                ", puntuacion=" + puntuacion +
+//                ", fechaEvaluacion=" + fecha+
+                '}';
+    }
 }

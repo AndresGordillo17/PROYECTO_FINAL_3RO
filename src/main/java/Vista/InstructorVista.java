@@ -393,7 +393,6 @@ public class InstructorVista extends javax.swing.JInternalFrame {
         setDatos();
         limpiarTabla();
         cargarTabla();
-        txtNOM.setText("");
         limpiarEntradas();
     }//GEN-LAST:event_btnagregarActionPerformed
 

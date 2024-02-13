@@ -21,6 +21,7 @@ public class Fichaevalua extends javax.swing.JInternalFrame {
      */
     public Fichaevalua() {
         initComponents();
+        setModel();
     }
 
     /**
@@ -32,7 +33,6 @@ public class Fichaevalua extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btngrupo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -48,17 +48,19 @@ public class Fichaevalua extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TBficha = new javax.swing.JTable();
-        btniniciar = new javax.swing.JButton();
+        btnactualizar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtobservacion = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         txttecnica = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtcedula = new javax.swing.JTextField();
         txtsino = new javax.swing.JTextField();
         txtcinturon = new javax.swing.JTextField();
-        btniniciar2 = new javax.swing.JButton();
-        btniniciar3 = new javax.swing.JButton();
+        btniniciar = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
+        txtfecha = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txtcedula = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 204));
         setClosable(true);
@@ -117,13 +119,18 @@ public class Fichaevalua extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TBficha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TBfichaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TBficha);
 
-        btniniciar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btniniciar.setText("ACTUALIZAR");
-        btniniciar.addActionListener(new java.awt.event.ActionListener() {
+        btnactualizar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnactualizar.setText("ACTUALIZAR");
+        btnactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btniniciarActionPerformed(evt);
+                btnactualizarActionPerformed(evt);
             }
         });
 
@@ -144,30 +151,35 @@ public class Fichaevalua extends javax.swing.JInternalFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel10.setText("CEDULA :");
 
-        txtcedula.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        txtcedula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcedulaActionPerformed(evt);
-            }
-        });
-
         txtsino.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
 
         txtcinturon.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
 
-        btniniciar2.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btniniciar2.setText("GUARDAR");
-        btniniciar2.addActionListener(new java.awt.event.ActionListener() {
+        btniniciar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btniniciar.setText("GUARDAR");
+        btniniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btniniciar2ActionPerformed(evt);
+                btniniciarActionPerformed(evt);
             }
         });
 
-        btniniciar3.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btniniciar3.setText("ELIMINAR");
-        btniniciar3.addActionListener(new java.awt.event.ActionListener() {
+        btneliminar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btneliminar.setText("ELIMINAR");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btniniciar3ActionPerformed(evt);
+                btneliminarActionPerformed(evt);
+            }
+        });
+
+        txtfecha.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jLabel11.setText("FECHA:");
+
+        txtcedula.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        txtcedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcedulaActionPerformed(evt);
             }
         });
 
@@ -184,35 +196,35 @@ public class Fichaevalua extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtpracticante, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtinstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(32, 32, 32)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtpracticante, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtinstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(32, 32, 32)
-                                        .addComponent(jLabel6))
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(txttecnica, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(74, 74, 74))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel11))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(txtpostura, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(77, 77, 77)))
-                                .addComponent(jLabel3)
+                                        .addGap(77, 77, 77)
+                                        .addComponent(jLabel3)))
                                 .addGap(18, 18, 18)
-                                .addComponent(txtsino, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtsino, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtcinturon, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(68, 68, 68)
@@ -220,28 +232,24 @@ public class Fichaevalua extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtpuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(322, 322, 322)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(322, 322, 322)
-                                .addComponent(jLabel2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btniniciar2)
-                                        .addGap(38, 38, 38)
-                                        .addComponent(btniniciar)
-                                        .addGap(61, 61, 61)
-                                        .addComponent(btniniciar3))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(57, 57, 57))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btniniciar)
+                                .addGap(38, 38, 38)
+                                .addComponent(btnactualizar)
+                                .addGap(61, 61, 61)
+                                .addComponent(btneliminar))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,26 +278,29 @@ public class Fichaevalua extends javax.swing.JInternalFrame {
                             .addComponent(jLabel9)
                             .addComponent(txtinstructor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)
-                            .addComponent(txttecnica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46))
+                            .addComponent(txttecnica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtpuntos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
-                        .addGap(38, 38, 38)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtsino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(66, 66, 66)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btniniciar)
-                    .addComponent(btniniciar3)
-                    .addComponent(btniniciar2))
+                    .addComponent(btnactualizar)
+                    .addComponent(btneliminar)
+                    .addComponent(btniniciar))
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(108, Short.MAX_VALUE))
@@ -314,11 +325,11 @@ ArrayList<Ficha> listaFicha = new ArrayList<>();
     DefaultTableModel modelo = new DefaultTableModel();
 
     public void setModel() {
-        String[] cabecera = {"Nro.", "Nombres",
-            "Cédula",
-            "Inatructor",
+        String[] cabecera = {"Nro.", "Practicante", "cedula",
+            "Instructor",
             "cinturon",
-            "Postura","Tecnica","Puntuacion","Resulatado","Observaciones"};
+            "Fecha",
+            "Postura", "Tecnica", "Puntuacion", "Resultado", "Observaciones"};
         modelo.setColumnIdentifiers(cabecera);
         TBficha.setModel(modelo);
 
@@ -333,19 +344,19 @@ ArrayList<Ficha> listaFicha = new ArrayList<>();
             datosFila[2] = datos.getCedula();
             datosFila[3] = datos.getInstructor();
             datosFila[4] = datos.getCinturon();
-            datosFila[5] = datos.getConomimiento();
+            datosFila[5] = datos.getFecha();
             datosFila[6] = datos.getTecnica();
-             datosFila[7] = datos.getPuntuacion();
-              datosFila[8] = datos.getResultado();
-               datosFila[9] = datos.getObservaciones();
+            datosFila[7] = datos.getConocimiento();
+            datosFila[8] = datos.getPuntuacion();
+            datosFila[9] = datos.getResultado();
+            datosFila[10] = datos.getObservaciones();
             nro++;
             modelo.addRow(datosFila);
         }
     }
-    private void btniniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciarActionPerformed
+    private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
         // TODO add your handling code here:
-      
-    }//GEN-LAST:event_btniniciarActionPerformed
+    }//GEN-LAST:event_btnactualizarActionPerformed
 
     private void txttecnicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttecnicaActionPerformed
         // TODO add your handling code here:
@@ -355,35 +366,95 @@ ArrayList<Ficha> listaFicha = new ArrayList<>();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtinstructorActionPerformed
 
-    private void txtcedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcedulaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcedulaActionPerformed
+    private void btniniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciarActionPerformed
 
-    private void btniniciar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciar2ActionPerformed
         // TODO add your handling code here:
-        Ficha pM = new Ficha(txtpracticante.getText(), txtcedula.getText(), txtinstructor.getText(),
-                txtsino.getText(), txtobservacion.getText(), Integer.parseInt(txttecnica.getText()),
-                Integer.parseInt(txtpostura.getText()),Integer.parseInt(txtpuntos.getText()),
-                Integer.parseInt(txtcedula.getText()) );
+        Ficha pM = new Ficha(txtpracticante.getText(),
+                txtinstructor.getText(),
+                txtcinturon.getText(),
+                0, Integer.parseInt(txtcedula.getText()),
+                Integer.parseInt(txttecnica.getText()),
+                Integer.parseInt(txtpostura.getText()),
+                Integer.parseInt(txtpuntos.getText()),
+                txtsino.getText(),
+                txtobservacion.getText(), txtfecha.getText());
+
         ControladorFicha pC = new ControladorFicha();
         pC.crearFicha(pM);
         listaFicha.add(pM);
         setDatos();
-    }//GEN-LAST:event_btniniciar2ActionPerformed
+        limpiarTabla();
+        cargarTabla();
+//        limpiarEntradas();
+    }//GEN-LAST:event_btniniciarActionPerformed
 
-    private void btniniciar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciar3ActionPerformed
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btniniciar3ActionPerformed
+        int cedula = Integer.parseInt(txtcedula.getText());
+        ControladorFicha pC = new ControladorFicha();
+        pC.eliminarFicha(cedula);
+        limpiarTabla();
+        cargarTabla();
+        limpiarEntradas();
+    }//GEN-LAST:event_btneliminarActionPerformed
 
+    private void txtcedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcedulaActionPerformed
+
+    private void TBfichaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TBfichaMouseClicked
+        // TODO add your handling code here:
+//        DefaultTableModel dtm = (DefaultTableModel) TBficha.getModel();
+//        txtcedula.setText((String) dtm.getValueAt(TBficha.getSelectedRow(), 4));
+//        txtcinturon.setText((String) dtm.getValueAt(TBficha.getSelectedRow(), 2));
+//        txtfecha.setText(dtm.getValueAt(TBficha.getSelectedRow(), 5).toString());
+//        txtinstructor.setText((String) dtm.getValueAt(TBficha.getSelectedRow(), 3));
+//        txtobservacion.setText(dtm.getValueAt(TBficha.getSelectedRow(), 10).toString());
+//        txtpostura.setText((String) dtm.getValueAt(TBficha.getSelectedRow(), 7));
+//        txtpracticante.setText((String) dtm.getValueAt(TBficha.getSelectedRow(), 1));
+//        txtpuntos.setText((String) dtm.getValueAt(TBficha.getSelectedRow(), 8));
+//        txtsino.setText((String) dtm.getValueAt(TBficha.getSelectedRow(), 9));
+//        txttecnica.setText((String) dtm.getValueAt(TBficha.getSelectedRow(), 6));
+    }//GEN-LAST:event_TBfichaMouseClicked
+    private void limpiarTabla() {
+        int a = modelo.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            modelo.removeRow(i);
+        }
+    }
+
+    private void cargarTabla() {
+    ControladorFicha DF = new ControladorFicha();
+    ArrayList<Object[]> lista = DF.datosFicha();
+    limpiarTabla();
+    for (Object[] filas : lista) {
+        modelo.addRow(filas);
+    }
+    TBficha.setModel(modelo);
+}
+
+
+    public void limpiarEntradas() {
+        txtpracticante.setText("");
+        txtcedula.setText("");
+        txtcinturon.setText("");
+        txtfecha.setText("");
+        txtinstructor.setText("");
+        txtobservacion.setText("");
+        txtpostura.setText("");
+        txtpuntos.setText("");
+        txtsino.setText("");
+        txttecnica.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TBficha;
-    private javax.swing.ButtonGroup btngrupo;
+    private javax.swing.JButton btnactualizar;
+    private javax.swing.JButton btneliminar;
     private javax.swing.JButton btniniciar;
-    private javax.swing.JButton btniniciar2;
-    private javax.swing.JButton btniniciar3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -397,6 +468,7 @@ ArrayList<Ficha> listaFicha = new ArrayList<>();
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcinturon;
+    private javax.swing.JTextField txtfecha;
     private javax.swing.JTextField txtinstructor;
     private javax.swing.JTextArea txtobservacion;
     private javax.swing.JTextField txtpostura;
