@@ -99,7 +99,6 @@ public class Practicante {
                 ", apellido='" + APELLIDO + '\'' +
                 ", direccion='" + DIRECCION + '\'' +
                 ", id_practicante=" + ID_PRACTICANTE +
-                ", id_instructor=" + ID_INSTRUCTOR +
                 ", cedula=" + CEDULA +
                 ", edad=" + EDAD +
                 ", telefono=" + TELEFONO +

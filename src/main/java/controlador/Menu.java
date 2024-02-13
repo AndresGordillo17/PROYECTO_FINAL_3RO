@@ -5,8 +5,8 @@
 package controlador;
 
 import Vista.Fichaevalua;
-import Vista.Instructor;
-import Vista.Practicante;
+import Vista.InstructorView;
+import Vista.PracticanteView;
 
 /**
  *
@@ -34,7 +34,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         menuPilas = new javax.swing.JMenu();
         menuArboles = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        PracticanteView = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -60,13 +60,13 @@ public class Menu extends javax.swing.JFrame {
 
         menuArboles.setText("Practicante");
 
-        jMenuItem9.setText("datos");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        PracticanteView.setText("datos");
+        PracticanteView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                PracticanteViewActionPerformed(evt);
             }
         });
-        menuArboles.add(jMenuItem9);
+        menuArboles.add(PracticanteView);
 
         jMenuBar1.add(menuArboles);
 
@@ -142,18 +142,18 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        Practicante N8=new Practicante();
+        InstructorView N8=new InstructorView();
         escritorio.add(N8);
         N8.show();
        
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void PracticanteViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PracticanteViewActionPerformed
         // TODO add your handling code here:
-        Instructor N7=new Instructor();
+        PracticanteView N7=new PracticanteView();
         escritorio.add(N7);
         N7.show();
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    }//GEN-LAST:event_PracticanteViewActionPerformed
 
     public void ejecutarReporte(){
         Fichaevalua reporte=new Fichaevalua();
@@ -211,6 +211,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem PracticanteView;
     public static javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -219,7 +220,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenu menuArboles;
     private javax.swing.JMenu menuPilas;
     // End of variables declaration//GEN-END:variables

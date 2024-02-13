@@ -14,12 +14,12 @@
             <Property name="text" type="java.lang.String" value="Practicante"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+            <MenuItem class="javax.swing.JMenuItem" name="PracticanteView">
               <Properties>
                 <Property name="text" type="java.lang.String" value="datos"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PracticanteViewActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

@@ -50,29 +50,98 @@ public void crearPracticante(Practicante p) {
         }
     } 
 
-//public ArrayList<Object[]> datosPracticante() {
-//    ArrayList<Object[]> listaTotalP = new ArrayList<>();
-//    try {
-//        String SQL = "call ListarPracticantes()";
-//        try (PreparedStatement stmt = 
-//             ResultSet res = stmt.executeQuery()) {
-//            int cont = 1;
-//            while (res.next()) {
-//                Object[] fila = new Object[7];
-//                for (int i = 1; i <= 6; i++) {
-//                    fila[i] = res.getObject(i);
-//                }
-//                fila[0] = cont;
-//                listaTotalP.add(fila);
-//                cont++;
-//            }
-//        }
-//        return listaTotalP;
-//    } catch (SQLException e) {
-//        System.out.println("BDD" + e);
-//        e.printStackTrace();
-//    }
-//    return null;
-//}
-//    
+public ArrayList<Object[]> datosPracticante() {
+    ArrayList<Object[]> listaTotalP = new ArrayList<>();
+    try {
+        String SQL = "call ListarPracticantes()";
+        ejecutar = (PreparedStatement) conectar.prepareCall(SQL);
+            //excuteQuery cuando consulto la bdd
+            //Recibo un result set cuando consulto
+            ResultSet res = ejecutar.executeQuery();
+            int cont = 1;
+            while (res.next()) {
+                Object[] fila = new Object[7];
+                for (int i = 0; i < 7; i++) {
+                    fila[i] = res.getObject(i + 1);
+                }
+                fila[0] = cont;
+                listaTotalP.add(fila);
+                cont++;
+            }
+            ejecutar.close();
+
+            return listaTotalP;
+        } catch (SQLException e) {
+            System.out.println("BDD" + e);
+        }
+        return null;
+    }
+ 
+public  ArrayList<Object[]>buscarPracticante(int cedula){
+        ArrayList<Object[]> listaTotalRegistros=new ArrayList<>();
+        try {
+            String sql = "call BuscarPracticante('" +cedula+ "');";
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+            ResultSet resultado=ejecutar.executeQuery();
+            int cont=1;
+            while(resultado.next()){
+                Object[]fila=new Object[7];
+                for (int i = 0; i < 7; i++) {
+                    fila[i]=resultado.getObject(i+1);
+               }
+                fila[0]=cont;
+                listaTotalRegistros.add(fila);
+                cont++;
+            }
+            ejecutar.close();
+            return listaTotalRegistros;         
+            
+                 
+            } catch (SQLException e) {
+                System.out.println("COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
+        }
+            return null;
+    }
+public void actualizarPracticante(Practicante p){
+        try {
+            
+            String sql = "CALL ActualizarPracticante('" + p.getNOMBRE()+ "','" +
+        p.getAPELLIDO() + "'," + p.getEDAD()+ "," +p.getCEDULA()+ ",'" +
+        p.getDIRECCION()+ "'," + p.getTELEFONO()+")"; 
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+            //executeUpdate cuando escribo la bdd
+            //int res cuando escribo
+            int res=ejecutar.executeUpdate();
+            if(res>0){
+                JOptionPane.showMessageDialog
+        (null, "Practicante actualizado con éxito");
+                ejecutar.close();
+            }else{
+                JOptionPane.showMessageDialog(null,"REVISAR LA INFORMACIÓN INGRESADA");
+            }
+            } catch (SQLException e) {
+               JOptionPane.showMessageDialog(null,"COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
+        }
+    
+    }
+public void eliminarPracticante(int cedula){
+        try {
+            
+            String sql = "call EliminarPracticante('"+cedula+"');";
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+            //executeUpdate cuando escribo la bdd
+            //int res cuando escribo
+            int res=ejecutar.executeUpdate();
+            if(res>0){
+                JOptionPane.showMessageDialog(null, "Practicante eliminado con éxito");
+            }else{
+                JOptionPane.showMessageDialog(null,"REVISAR LA INFORMACIÓN INGRESADA");
+            }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,"COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
+        }
+    
+    }
 }
+
+
