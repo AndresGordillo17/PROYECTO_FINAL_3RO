@@ -1,4 +1,5 @@
 Vista\Iniciosesion.class
+controlador\Menu$7.class
 Vista\PracticanteVista$7.class
 Vista\Fichaevalua$6.class
 Modelo\Ficha.class
@@ -13,12 +14,14 @@ controlador\Menu$6.class
 controlador\Menu.class
 Vista\Catalogocinturones$1.class
 Vista\Fichaevalua$5.class
+Vista\Historial.class
 controlador\ControladorFicha.class
 controlador\Menu$3.class
 controlador\Controlarsesion.class
 Vista\InstructorVista.class
 Vista\Fichaevalua.class
 Vista\InstructorVista$2.class
+Vista\Historial$1.class
 Vista\PracticanteVista$3.class
 Vista\Iniciosesion$1.class
 Vista\PracticanteVista$6.class
