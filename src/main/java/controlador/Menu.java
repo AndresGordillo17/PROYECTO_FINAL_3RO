@@ -4,7 +4,7 @@
  */
 package controlador;
 
-import Vista.Fichaevalua;
+import Vista.Fichaevalua1;
 import Vista.InstructorView;
 import Vista.PracticanteView;
 
@@ -135,7 +135,7 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         
-         Fichaevalua N9=new Fichaevalua();
+         Fichaevalua1 N9=new Fichaevalua1();
         escritorio.add(N9);
         N9.show();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -156,7 +156,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_PracticanteViewActionPerformed
 
     public void ejecutarReporte(){
-        Fichaevalua reporte=new Fichaevalua();
+        Fichaevalua1 reporte=new Fichaevalua1();
         escritorio.add(reporte);
         reporte.show();
     }

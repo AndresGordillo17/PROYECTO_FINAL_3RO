@@ -142,6 +142,22 @@ public void eliminarPracticante(int cedula){
         }
     
     }
+
+public boolean practicanteRegistrado(String nombrePracticante){
+    try {
+        String sql = "SELECT COUNT(*) FROM practicante WHERE NOMBRE = ?";
+         PreparedStatement statement = conectar.prepareStatement(sql);
+         statement.setString(1, nombrePracticante);
+         ResultSet resultSet = statement.executeQuery();
+         if (resultSet.next()) {
+            int count = resultSet.getInt(1);
+            return count > 0; // Si count > 0, el practicante está registrado
+        }
+    } catch (Exception e) {
+        e.printStackTrace(); // Manejar cualquier error de SQL
+    }
+    return false;
 }
 
+}
 

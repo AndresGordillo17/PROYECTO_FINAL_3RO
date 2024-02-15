@@ -83,5 +83,9 @@ public class Instructor {
 @Override
     public String toString() {
         return "DATOS DE PERSONA";}
+
+    public boolean instructorRegistrado(String nombreInstructor) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

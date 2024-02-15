@@ -144,5 +144,14 @@ public class Controladorinstructor {
         }
     
     }
-    
+    public boolean instructorRegistrado(String nombreInstructor) {
+        // Implementa aquí la lógica para verificar si el instructor está registrado en la base de datos
+        // Puedes usar consultas a la base de datos u otros métodos de acceso a los datos
+        
+        // Por ejemplo:
+        // Supongamos que tienes una clase de acceso a la base de datos llamada InstructorDAO
+        Instructor instructorDAO = new Instructor();
+        return instructorDAO.instructorRegistrado(nombreInstructor);
+    }
 }
+
