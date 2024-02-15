@@ -216,4 +216,29 @@ public void actualizarFicha(Ficha f){
         JOptionPane.showMessageDialog(null, "CONTACTESE CON EL ADMINISTRADOR !!");
     }
 }
+public  ArrayList<Object[]>buscarFicha(int CEDULA){
+        ArrayList<Object[]> listaTotalRegistros=new ArrayList<>();
+        try {
+            String sql = "call BuscarEvaluacion('" +CEDULA+ "');";
+            iniciar = (PreparedStatement) conectado.prepareCall(sql);
+            ResultSet resultado=iniciar.executeQuery();
+            int cont=1;
+            while(resultado.next()){
+                Object[]fila=new Object[10];
+                for (int i = 0; i < 10; i++) {
+                    fila[i]=resultado.getObject(i+1);
+               }
+                fila[0]=cont;
+                listaTotalRegistros.add(fila);
+                cont++;
+            }
+            iniciar.close();
+            return listaTotalRegistros;         
+            
+                 
+            } catch (SQLException e) {
+                System.out.println("COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
+        }
+            return null;
+    }
 }

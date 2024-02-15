@@ -84,7 +84,7 @@ public class InstructorVista extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel1.setText("DATOS ISNTRUCTOR");
+        jLabel1.setText("DATOS INSTRUCTOR");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel3.setText("NOMBRE :");
@@ -329,6 +329,19 @@ public class InstructorVista extends javax.swing.JInternalFrame {
         }
 
     }
+    
+        private boolean validarTexto(String texto) {
+    return texto.matches("[a-zA-Z]+");
+}
+    private boolean validarDireccion(String direccion) {
+    return direccion.matches("[a-zA-Z0-9]+");
+}
+        private boolean validarNumero(String numero) {
+    return numero.matches("\\d+");
+}
+         private boolean validarLongitud(String texto, int longitud) {
+    return texto.length() == longitud;
+}
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         // TODO add your handling code here:
         cargarTabla();
@@ -378,6 +391,46 @@ public class InstructorVista extends javax.swing.JInternalFrame {
 
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
         // TODO add your handling code here:
+          String nombre = txtNOM.getText();
+    String apellido = txtAPELLI.getText();
+    String cedulaStr = txtCEDULA.getText();
+    String telefonoStr = txtTELEF.getText();
+    String direccion = txtDIRECCIO.getText();
+    String grado = txtGRADO.getText();
+    // Validación para el nombre
+    if (!validarTexto(nombre)) {
+        JOptionPane.showMessageDialog(this, "El nombre solo puede contener letras.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Validación para el apellido
+    if (!validarTexto(apellido)) {
+        JOptionPane.showMessageDialog(this, "El apellido solo puede contener letras.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Validación para la dirección
+    if (!validarDireccion(direccion)) {
+        JOptionPane.showMessageDialog(this, "La dirección debe contener solo letras y números.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Validación para el grado
+    if (!validarTexto(grado)) {
+        JOptionPane.showMessageDialog(this, "El grado solo puede contener letras.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Validación para la cédula y el teléfono
+    if (!validarLongitud(cedulaStr, 10) || !validarNumero(cedulaStr)) {
+        JOptionPane.showMessageDialog(this, "La cédula debe contener exactamente 10 dígitos numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    if (!validarLongitud(telefonoStr, 10) || !validarNumero(telefonoStr)) {
+        JOptionPane.showMessageDialog(this, "El teléfono debe contener exactamente 10 dígitos numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
         Instructor pM = new Instructor(
             txtNOM.getText(),
             txtAPELLI.getText(),

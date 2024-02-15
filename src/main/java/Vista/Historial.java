@@ -58,8 +58,11 @@ public class Historial extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+
         jLabel1.setText("HISTORIAL DE ASCENSOS");
 
+        TBVER.setBackground(new java.awt.Color(204, 255, 204));
         TBVER.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -81,6 +84,11 @@ public class Historial extends javax.swing.JInternalFrame {
         });
 
         txtbuscar.setText("BUSCAR");
+        txtbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,6 +160,16 @@ public class Historial extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         cargarTabla();
     }//GEN-LAST:event_txtverActionPerformed
+
+    private void txtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuscarActionPerformed
+        // TODO add your handling code here:
+     int cedula = Integer.parseInt(txtbuscar.getText());
+    ControladorFicha CP = new ControladorFicha();
+    ArrayList<Object[]> listas = CP.buscarFicha(cedula);
+    for (Object[] filas : listas) {
+        modelo.addRow(filas);
+    }        
+    }//GEN-LAST:event_txtbuscarActionPerformed
      ArrayList<Ficha> listaFicha = new ArrayList<>();
     DefaultTableModel modelo = new DefaultTableModel();
 
@@ -281,6 +299,31 @@ private String NombreCinturon(int idCinturon) {
     }
     return nombreCinturon;
 }
+public  ArrayList<Object[]>buscarFicha(int CEDULA){
+        ArrayList<Object[]> listaTotalRegistros=new ArrayList<>();
+        try {
+            String sql = "call BuscarEvaluacion('" +CEDULA+ "');";
+            iniciar = (PreparedStatement) conectado.prepareCall(sql);
+            ResultSet resultado=iniciar.executeQuery();
+            int cont=1;
+            while(resultado.next()){
+                Object[]fila=new Object[10];
+                for (int i = 0; i < 10; i++) {
+                    fila[i]=resultado.getObject(i+1);
+               }
+                fila[0]=cont;
+                listaTotalRegistros.add(fila);
+                cont++;
+            }
+            iniciar.close();
+            return listaTotalRegistros;         
+            
+                 
+            } catch (SQLException e) {
+                System.out.println("COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
+        }
+            return null;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TBVER;
     private javax.swing.JLabel jLabel1;

@@ -192,7 +192,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="DATOS ISNTRUCTOR"/>
+            <Property name="text" type="java.lang.String" value="DATOS INSTRUCTOR"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
