@@ -9,8 +9,11 @@ package Vista;
 import Modelo.Practicante;
 import controlador.Controladorinstructor;
 import controlador.Controladorpracticante;
+import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -321,35 +324,55 @@ ArrayList<Practicante> listaPracticante = new ArrayList<>();
     String edadStr = txtEDAD.getText();
     String cedulaStr = txtcedula.getText();
     String telefonoStr = txtTELEFONO.getText();
+    
     if (!validarTexto(nombre)) {
+        txtNOMBRE.setBackground(Color.RED); 
         JOptionPane.showMessageDialog(this, "El nombre solo puede contener letras.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
+    } else {
+        txtNOMBRE.setBackground(Color.WHITE); 
     }
 
     if (!validarTexto(apellido)) {
+        txtAPELLIDO.setBackground(Color.RED); 
         JOptionPane.showMessageDialog(this, "El apellido solo puede contener letras.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
+    } else {
+        txtAPELLIDO.setBackground(Color.WHITE); 
     }
 
     if (!validarDireccion(direccion)) {
+        txtDIRECCION.setBackground(Color.RED); 
         JOptionPane.showMessageDialog(this, "La dirección debe contener solo letras y números.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
+    } else {
+        txtDIRECCION.setBackground(Color.WHITE); 
     }
 
     if (!validarEdad(edadStr)) {
+        txtEDAD.setBackground(Color.RED); 
         JOptionPane.showMessageDialog(this, "La edad debe ser un número entero entre 4 y 50.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
+    } else {
+        txtEDAD.setBackground(Color.WHITE); 
     }
 
     if (!validarLongitud(cedulaStr, 10) || !validarNumero(cedulaStr)) {
+        txtcedula.setBackground(Color.RED); 
         JOptionPane.showMessageDialog(this, "La cédula debe contener exactamente 10 dígitos numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
+    } else {
+        txtcedula.setBackground(Color.WHITE); 
     }
 
     if (!validarLongitud(telefonoStr, 10) || !validarNumero(telefonoStr)) {
+        txtTELEFONO.setBackground(Color.RED); 
         JOptionPane.showMessageDialog(this, "El teléfono debe contener exactamente 10 dígitos numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
+    } else {
+        txtTELEFONO.setBackground(Color.WHITE); 
     }
+
         Practicante PRA = new Practicante(txtNOMBRE.getText(), txtAPELLIDO.getText(),
             txtDIRECCION.getText(), 0
             , Integer.parseInt(txtEDAD.getText()), Integer.parseInt(txtcedula.getText()),
