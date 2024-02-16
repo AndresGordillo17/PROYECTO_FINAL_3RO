@@ -354,7 +354,7 @@ ArrayList<Practicante> listaPracticante = new ArrayList<>();
             txtDIRECCION.getText(), 0
             , Integer.parseInt(txtEDAD.getText()), Integer.parseInt(txtcedula.getText()),
             Integer.parseInt(txtTELEFONO.getText()));
-        
+      
         Controladorpracticante CP = new Controladorpracticante();
         CP.crearPractcante(PRA);
         listaPracticante.add(PRA);

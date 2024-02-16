@@ -9,17 +9,20 @@ package Modelo;
  * @author usuario
  */
 public class Practicante {
-    private String NOMBRE,APELLIDO,DIRECCION;
-    private int ID_PRACTICANTE,EDAD,CEDULA,TELEFONO;
+
+    private String NOMBRE, APELLIDO, DIRECCION;
+    private int ID_PRACTICANTE, EDAD, CEDULA, TELEFONO;
 
     public Practicante() {
     }
 
     public Practicante(String NOMBRE, String APELLIDO, String DIRECCION, int ID_PRACTICANTE, int EDAD, int CEDULA, int TELEFONO) {
+
         this.NOMBRE = NOMBRE;
         this.APELLIDO = APELLIDO;
         this.DIRECCION = DIRECCION;
         this.ID_PRACTICANTE = ID_PRACTICANTE;
+
         this.EDAD = EDAD;
         this.CEDULA = CEDULA;
         this.TELEFONO = TELEFONO;
@@ -57,7 +60,7 @@ public class Practicante {
         this.ID_PRACTICANTE = ID_PRACTICANTE;
     }
 
-  
+    
     public int getEDAD() {
         return EDAD;
     }
@@ -82,19 +85,19 @@ public class Practicante {
         this.TELEFONO = TELEFONO;
     }
 
-   
-    
-@Override
+    @Override
     public String toString() {
-        return "Practicante{" +
-                "nombre='" + NOMBRE + '\'' +
-                ", apellido='" + APELLIDO + '\'' +
-                ", direccion='" + DIRECCION + '\'' +
-                ", id_practicante=" + ID_PRACTICANTE +
-              
-                ", cedula=" + CEDULA +
-                ", edad=" + EDAD +
-                ", telefono=" + TELEFONO +
-                '}';
+        return "Practicante{"
+                + "nombre='" + NOMBRE + '\''
+                + ", apellido='" + APELLIDO + '\''
+                + ", direccion='" + DIRECCION + '\''
+                + ", id_practicante=" + ID_PRACTICANTE
+                + ", cedula=" + CEDULA
+                + ", edad=" + EDAD
+                + ", telefono=" + TELEFONO
+                + '}';
     }
+
 }
+
+

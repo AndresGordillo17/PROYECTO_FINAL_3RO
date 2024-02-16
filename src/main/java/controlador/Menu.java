@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package controlador;
-
 import Vista.Catalogocinturones;
 import Vista.Fichaevalua;
 import Vista.Historial;
 import Vista.InstructorVista;
 import Vista.PracticanteVista;
+
 
 /**
  *
@@ -38,7 +38,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         menuPilas = new javax.swing.JMenu();
         menuArboles = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        PracticanteView = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -50,7 +50,7 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\usuario\\Desktop\\3RO SOFTWARE\\PROYECTO FINAL 3RO\\PROYECTO_FINAL_3RO\\src\\main\\java\\imagenes\\fondo.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\usuario\\Desktop\\3RO SOFTWARE\\PROYECTO FINAL 3RO\\PROYECTO_FINAL_3RO\\src\\main\\resources\\imagenes\\fondo.jpg")); // NOI18N
 
         escritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -60,14 +60,14 @@ public class Menu extends javax.swing.JFrame {
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -80,13 +80,13 @@ public class Menu extends javax.swing.JFrame {
 
         menuArboles.setText("Practicante");
 
-        jMenuItem9.setText("datos");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        PracticanteView.setText("datos");
+        PracticanteView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                PracticanteViewActionPerformed(evt);
             }
         });
-        menuArboles.add(jMenuItem9);
+        menuArboles.add(PracticanteView);
 
         jMenuBar1.add(menuArboles);
 
@@ -180,16 +180,14 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
        InstructorVista N7=new InstructorVista();
         escritorio.add(N7);
-        N7.show();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void PracticanteViewActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
         PracticanteVista N8=new PracticanteVista();
         escritorio.add(N8);
         N8.show();
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
+    }                                          
     private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
         // TODO add your handling code here:
         Catalogocinturones C1=new Catalogocinturones();
@@ -236,6 +234,7 @@ public class Menu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -283,21 +282,7 @@ public class Menu extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -309,6 +294,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem PracticanteView;
     public static javax.swing.JDesktopPane escritorio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
@@ -319,7 +305,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenu menuArboles;
     private javax.swing.JMenu menuPilas;
     private javax.swing.JMenuItem ver;

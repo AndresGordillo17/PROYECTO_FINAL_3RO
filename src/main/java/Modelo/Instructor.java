@@ -87,6 +87,7 @@ public class Instructor {
     
 @Override
     public String toString() {
+
         return "Instructor{" +
                 "Nombre_ins='" + NOMBRE_INS + '\'' +
                 ", apellido_ins='" + APELLIDOS_INS + '\'' +
@@ -96,6 +97,7 @@ public class Instructor {
                 ", cedula_ins=" + CEDULA_INS +
                 ", telefono_ins=" + TELEFONO_INS +
                 '}';
-    }
+
     
+}
 }

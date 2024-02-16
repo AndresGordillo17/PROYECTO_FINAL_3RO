@@ -4,6 +4,7 @@
  */
 package controlador;
 import controlador.Menu;
+
 import Modelo.Instructor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,8 +19,8 @@ import javax.swing.JOptionPane;
  */
 public class Controladorinstructor {
     private Instructor persona;
-    Conexion conectar=new Conexion();
-    Connection conectado=(Connection)conectar.conectar();
+    CONEXIONBDD parametros=new CONEXIONBDD();
+    Connection conectar=(Connection)parametros.conectar();
     PreparedStatement ejecutar;
     ResultSet resultado;
 int res;//para escribir
@@ -37,31 +38,56 @@ int res;//para escribir
     
 
  
-    public void crearInstructor(Instructor p){
+    public void crearInstructor(Modelo.Instructor p){
         try {
             String SQL = "CALL CrearInstructor('" + p.getNOMBRE_INS() + "', '" +
         p.getAPELLIDOS_INS() + "', " + p.getCEDULA_INS() + ", '" +
         p.getDIRECCION_INS() + "', " + p.getTELEFONO_INS() + ", '" +
         p.getGRADO() + "')";
-            ejecutar=(PreparedStatement)conectado.prepareCall(SQL);
+            ejecutar=(PreparedStatement)conectar.prepareCall(SQL);
             int res= ejecutar.executeUpdate();
             if(res>0){
                 JOptionPane.showMessageDialog(null, "INSTRUCTOR CREADO CON EXITO!!!!");
             }else{
                JOptionPane.showMessageDialog(null,"REVISE LA INFO!!!!");
             }
-            ejecutar.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"CONTACTESE CON EL ADMINISTRADOR !!");
+            System.out.println("ERROR SQL");
         }
-    
     }
+    public ArrayList<Object[]> datosIntructores() {
+        ArrayList<Object[]> listaTotalRegistros = new ArrayList<>();
+        try {
+            String SQL = "call ListarInstructores()";
+            ejecutar = (PreparedStatement) conectar.prepareCall(SQL);
+            //excuteQuery cuando consulto la bdd
+            //Recibo un result set cuando consulto
+            ResultSet res = ejecutar.executeQuery();
+            int cont = 1;
+            while (res.next()) {
+                Object[] fila = new Object[7];
+                for (int i = 0; i < 7; i++) {
+                    fila[i] = res.getObject(i + 1);
+                }
+                fila[0] = cont;
+                listaTotalRegistros.add(fila);
+                cont++;
+            }
+            ejecutar.close();
+
+            return listaTotalRegistros;
+        } catch (SQLException e) {
+            System.out.println("BDD" + e);
+        }
+        return null;
+    }
+ 
 
    public ArrayList<Object[]> datosPersonas() {
         ArrayList<Object[]> listaTotalRegistros = new ArrayList<>();
         try {
             String SQL = "call ListarInstructores()";
-            ejecutar = (PreparedStatement) conectado.prepareCall(SQL);
+            ejecutar = (PreparedStatement) conectar.prepareCall(SQL);
             //excuteQuery cuando consulto la bdd
             //Recibo un result set cuando consulto
             ResultSet res = ejecutar.executeQuery();
@@ -88,7 +114,7 @@ public  ArrayList<Object[]>buscarInstructor(int CEDULA_INS){
         ArrayList<Object[]> listaTotalRegistros=new ArrayList<>();
         try {
             String sql = "call BuscarInstructor('" +CEDULA_INS+ "');";
-            ejecutar = (PreparedStatement) conectado.prepareCall(sql);
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
             ResultSet resultado=ejecutar.executeQuery();
             int cont=1;
             while(resultado.next()){
@@ -117,10 +143,8 @@ public  ArrayList<Object[]>buscarInstructor(int CEDULA_INS){
         p.getAPELLIDOS_INS() + "', " + p.getCEDULA_INS() + ", '" +
         p.getDIRECCION_INS() + "', " + p.getTELEFONO_INS() + ", '" +
         p.getGRADO() + "')";
-            ejecutar = (PreparedStatement) conectado.prepareCall(sql);
-            //executeUpdate cuando escribo la bdd
-            //int res cuando escribo
-            int res=ejecutar.executeUpdate();
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+
             if(res>0){
                 JOptionPane.showMessageDialog(null, "Instructor actualizado con éxito");
                 ejecutar.close();
@@ -138,23 +162,21 @@ public  ArrayList<Object[]>buscarInstructor(int CEDULA_INS){
         try {
             
             String sql = "call EliminarInstructor('"+CEDULA_INS+"');";
-            ejecutar = (PreparedStatement) conectado.prepareCall(sql);
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
             //executeUpdate cuando escribo la bdd
             //int res cuando escribo
             int res=ejecutar.executeUpdate();
             if(res>0){
-                JOptionPane.showMessageDialog
-        (null, "Instructor eliminado con éxito");
-                System.out.println("PERSONA CREADA CON ÉXITO");
-                ejecutar.close();
+               
+                JOptionPane.showMessageDialog(null, "Instructor eliminado con éxito");
             }else{
-                JOptionPane.showMessageDialog
-        (null, "Revisar los datos ingresados al momento de querer eliminar");
-                System.out.println("REVISAR LA INFORMACIÓN INGRESADA");
+                JOptionPane.showMessageDialog(null,"REVISAR LA INFORMACIÓN INGRESADA");
             }
             } catch (SQLException e) {
-                System.out.println("COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
+                JOptionPane.showMessageDialog(null,"COMUNICARSE CON EL ADMINISTRADOR DEL SISTEMA");
         }
     
     }
 }
+
+

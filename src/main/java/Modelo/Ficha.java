@@ -4,19 +4,25 @@
  */
 package Modelo;
 
+
 import java.sql.Date;
+
 
 /**
  *
  * @author usuario
  */
 public class Ficha {
+
     private String Practicante, instructor, cinturon;
     private int tecnica, conocimiento, puntuacion,id_evaluacion,cedula;
     private String fecha, resultado, observaciones;
 
+
+
     public Ficha() {
     }
+
 
     public Ficha(String Practicante, String instructor, String cinturon, int id_evaluacion,int cedula, int tecnica, int conocimiento, int puntuacion, String resultado, String observaciones,String fecha) {
         this.Practicante = Practicante;
@@ -30,6 +36,8 @@ public class Ficha {
         this.fecha = fecha;
         this.resultado = resultado;
         this.observaciones = observaciones;
+
+   
     }
 
     
@@ -81,15 +89,14 @@ public class Ficha {
     public void setTecnica(int tecnica) {
         this.tecnica = tecnica;
     }
-
     public int getConocimiento() {
         return conocimiento;
     }
 
     public void setConocimiento(int conocimiento) {
         this.conocimiento = conocimiento;
-    }
 
+    }
     public int getPuntuacion() {
         return puntuacion;
     }
@@ -113,7 +120,6 @@ public class Ficha {
     public void setCedula(int cedula) {
         this.cedula = cedula;
     }
-
    
     public String getFecha() {
         return fecha;
@@ -139,4 +145,5 @@ public class Ficha {
 //                ", fechaEvaluacion=" + fecha+
                 '}';
     }
+
 }

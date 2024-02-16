@@ -5,7 +5,10 @@
 package controlador;
 
 import Modelo.Ficha;
+
 import java.sql.CallableStatement;
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,12 +22,15 @@ import javax.swing.JOptionPane;
  */
 public class ControladorFicha {
 
+
     private Ficha ficha;
     Conexion conectar = new Conexion();
     Connection conectado = (Connection) conectar.conectar();
     PreparedStatement iniciar;
     ResultSet respuesta;
     int res;//para escribir
+
+
 
     public ControladorFicha() {
     }

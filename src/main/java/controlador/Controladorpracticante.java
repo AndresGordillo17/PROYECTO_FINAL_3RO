@@ -5,13 +5,13 @@
 package controlador;
 
 import Modelo.Practicante;
+import Modelo.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 
 /**
  *
@@ -23,10 +23,7 @@ public class Controladorpracticante {
     Connection conectado=(Connection)conectar.conectar();
     PreparedStatement iniciar;
     ResultSet ejecutar;
-
-    public Controladorpracticante() {
-    }
-
+    
     public Practicante getPracticante() {
         return practicante;
     }
@@ -36,9 +33,6 @@ public class Controladorpracticante {
     }
 
     
-    
-
- 
     public void crearPractcante(Practicante P){
         try {
             String SQL = "CALL CrearPracticante('" + P.getNOMBRE()+ "', '" +
@@ -153,3 +147,5 @@ public  ArrayList<Object[]>buscarPracticante(int cedula){
     
     }
 }
+
+   
