@@ -393,7 +393,7 @@ ArrayList<Practicante> listaPracticante = new ArrayList<>();
         
     }//GEN-LAST:event_txtDIRECCIONActionPerformed
     private boolean validarTexto(String texto) {
-    return texto.matches("[a-zA-Z]+");
+    return texto.matches("[a-zA-Z ]+");
 }
     private boolean validarDireccion(String direccion) {
     return direccion.matches("[a-zA-Z0-9]+");

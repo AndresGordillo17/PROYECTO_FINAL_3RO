@@ -1,20 +1,20 @@
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Main.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\Historial.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Conexion.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Menu.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\Iniciosesion.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\Fichaevalua.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Controladorinstructor.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\PracticanteVista.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\Cinturones.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\ControladorFicha.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\Practicante.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Controlarsesion.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\Ficha.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\Catalogocinturones.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Controladorpracticante.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\SesionModel.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\InstructorVista.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\CONEXIONBDD.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\Instructor.java
-C:\Users\usuario\Desktop\3RO SOFTWARE\PROYECTO FINAL 3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Controladorcinturones.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Controlarsesion.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\Cinturones.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\PracticanteVista.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Controladorcinturones.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\CONEXIONBDD.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\ControladorFicha.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Controladorinstructor.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\Fichaevalua.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Menu.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\Catalogocinturones.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\Practicante.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\Iniciosesion.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\SesionModel.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\InstructorVista.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Vista\Historial.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\Ficha.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Controladorpracticante.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Main.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\controlador\Conexion.java
+C:\Users\DELL\OneDrive\Documentos\NetBeansProjects\Proyecto Final 3ro\proyecto final 3ro\PROYECTO_FINAL_3RO\PROYECTO_FINAL_3RO\src\main\java\Modelo\Instructor.java

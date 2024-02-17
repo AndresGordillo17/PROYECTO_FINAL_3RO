@@ -393,7 +393,7 @@ ArrayList<Ficha> listaFicha = new ArrayList<>();
 
     private void btniniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciarActionPerformed
 
-        // TODO add your handling code here:
+        String cedula = txtcedula.getText();
         Ficha pM = new Ficha(txtpracticante.getText(),
                 txtinstructor.getText(),
                 txtcinturon.getText(),

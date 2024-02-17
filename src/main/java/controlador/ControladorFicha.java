@@ -5,6 +5,8 @@
 package controlador;
 
 import Modelo.Ficha;
+import Modelo.Practicante;
+import Vista.PracticanteVista;
 
 import java.sql.CallableStatement;
 
@@ -139,8 +141,8 @@ public class ControladorFicha {
     ArrayList<Object[]> listaFicha = new ArrayList<>();
     try {
         String sql = "CALL ListarFichas()"; 
-        CallableStatement cs = conectado.prepareCall(sql); 
-        ResultSet res = cs.executeQuery(); 
+        iniciar = (PreparedStatement)conectado.prepareCall(sql); 
+        ResultSet res = iniciar.executeQuery();
 
         int cont = 1;
         while (res.next()) {
@@ -152,7 +154,7 @@ public class ControladorFicha {
             listaFicha.add(fila.toArray());
             cont++;
         }
-        cs.close();
+        iniciar.close();
         return listaFicha;
     } catch (SQLException e) {
         System.out.println("Error al obtener datos de la base de datos: " + e.getMessage());
@@ -247,4 +249,19 @@ public  ArrayList<Object[]>buscarFicha(int CEDULA){
         }
             return null;
     }
+public Practicante practicanteRegistrado(String cedula) {
+    Practicante practicante = null;
+    try {
+        String SQL = "call BuscarPracticante()";
+        iniciar = (PreparedStatement) conectado.prepareCall(SQL);
+        ResultSet res = iniciar.executeQuery();
+        if (res.next()){
+           String nombre = res.getString("nombre");
+            String cinturon = res.getString("cinturon");
+        }
+    } catch (SQLException e) {
+        System.out.println("Comunicarse con el administrador del sitema()");
+    }
+    return null;
+}
 }

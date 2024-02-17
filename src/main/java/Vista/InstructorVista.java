@@ -331,7 +331,7 @@ public class InstructorVista extends javax.swing.JInternalFrame {
     }
     
         private boolean validarTexto(String texto) {
-    return texto.matches("[a-zA-Z]+");
+    return texto.matches("[a-zA-Z ]+");
 }
     private boolean validarDireccion(String direccion) {
     return direccion.matches("[a-zA-Z0-9]+");
