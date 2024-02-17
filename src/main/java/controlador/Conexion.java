@@ -5,14 +5,14 @@ import java.sql.SQLException;
 
 
 public class Conexion {
-    java.sql.Connection conexion;
+    java.sql.Connection conexion;   
      public java.sql.Connection conectar(){
         //LANZAR CÓDIGO DE PRUEBA 
         try {
             //Manera de Conexión a la Base de Datos
             Class.forName("com.mysql.jdbc.Driver");
             //Parámetros de conexión url/usuario/clave en mysql
-            conexion=DriverManager.getConnection("jdbc:mysql://localhost/3roproyecto?autoReconnect=true&useSSL=false","root","Andres18@");
+            conexion=DriverManager.getConnection("jdbc:mysql://localhost/3roproyecto?autoReconnect=true&useSSL=false","root","1234");
             System.out.println("CONECTADO"); 
         } catch (ClassNotFoundException | SQLException e)//CAPTURAR ERRORES 
         {
